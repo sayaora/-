@@ -1,0 +1,699 @@
+// labaodin.cpp: определяет точку входа для консольного приложения.
+
+
+//////////////////////////////////////////////
+//Лабораторная рабта номер 1.
+//Тема: "Создание консольного приложения".
+//Вариант номер 1.
+//
+/////////////////////////////////////////////
+
+
+#include "stdafx.h" //стандартные библиотеки С++
+#include <iostream>// для endl,clog (операторы вывода как cout)
+#include <locale.h> // библиотека для языков
+#include <cstdlib> // не получалось написать систем пауз, добавил библиотеку, где она обозначена
+using namespace std; //используется для библиотек iostream
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	setlocale(LC_CTYPE, "Russian_Russia.1251"); //setlocale (lc)= выбор языка
+	cout<<"Программа закончила работу..."<<endl;//cout=написать в цмд (коносль)=вывод
+	 system("pause"); // приостановление работы приложение
+	return 0;//завершение программы при возрате (как end и тд в других языках)
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+// laba2.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <locale>
+#include <iomanip>
+using namespace std;
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	setlocale(LC_ALL,"Russian_Russia.1251");
+		int n;
+		double f1,f2,f3;
+		n=6765;
+		f1=567,4545;
+		f2=77./6754.;
+		f3=112122./33.;
+		cout<<"вывод числа с плав точкой" <<endl;
+		cout<<"========================"<<endl;
+		cout<<"по умолчанию n=  "<<n<<endl;
+		cout<<"16 ричная система"<<endl;
+		std::cout<<std::hex<<n <<endl;
+		cout<<"8 ричная"<<endl;
+		cout<<oct<<n<<endl;
+		cout<<"ширина поля вывода 10 символов"<<setw(10)<<n<<endl;
+		cout<<"ширина поля вывода 7 символов"<<setw(7)<<n<<endl;
+		cout<<"ширина поля вывода 2 символов"<<setw(2)<<n<<endl;
+		cout<<"======================"<<endl;
+		cout<<"по умолчанию"<<f1<<f2<<f3<<endl;
+		cout<<"с точностью до 16 "
+			<<setprecision(16)<<fixed<<f1<<f2<<f3<<endl;
+		cout<<"с точностью до 3 "
+			<<setprecision(3)<<fixed<<f1<<f2<<f3<<endl;
+		cout<<"======================"<<endl;
+		cout<<"научная нотация до 16 (нормальная)  "
+			<<scientific<<fixed<<f1<<f2<<f3<<endl;
+		cout<<"научная нотация  до 3 "
+			<<setprecision(3)<<scientific<<fixed<<f1<<f2<<f3<<endl;
+		cout<<"======================"<<endl;
+				cout<<"научная нотация с шириной до 4х " 
+			<<setw(18)<<fixed<<f1<<f2<<f3<<endl;
+		cout<<"научная нотация с шириной до 4х " 
+			<<setw(4)<<fixed<<f1<<f2<<f3<<endl;
+		system("pause");
+}
+
+
+// maket.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <locale>
+#include <iomanip>
+using namespace std;
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	setlocale(LC_ALL,"Russian_Russia.1251");
+	int i;
+	double f;
+	cout<<"Вывод числа с плав. точкой"<<endl;
+	cout<<"=========================="<<end;
+	f=12./379.;
+	cout<<"По умолчанию f="<<f<<endl;
+	cout<<"В научной нотации f="<<scientific<<f<<endl;
+	cout<<"По умолчанию f="<<fixed<<f<<endl;
+	cout<<"По умолчанию f="<<f<<endl;
+	cout<<"С точностью до 16 цифр f="<<setprecision(16)<<f<<endl;
+	cout<<"в научной нотации с точностью до 16 цифр f="<<scientific<<f<<endl;
+	cout<<"В научной нотации с точностью до 3 цифр f="<<setprecision(3)<<scientific<<f<<endl;
+	cout<<"В наусной нотации с точностью до 3 цифр "<<endl<<"с шириной поля вывода 20 символов f="<<setw(15)<<setprecision(3)<<scientific<<f<<endl;
+	cout<<endl;
+	cout<<"Вывод целого числа"<<endl;
+	cout<<"=================="<<endl
+		i=255;
+	cout<<"По умолчанию i="<<i<<endl;
+	cout<<"В 16 ричной"<<hex<<i<<endl;
+	cout<<" в 8 ричной"<<oct<<i<<endl;
+	cout<<dec;
+	cout<<"ширина поля вывода 8 символов"<<setw(8)<<i<<endl;
+	cout<<"ширина поля вывода 5 символов"<<setw(5)<<i<<endl;
+	cout<<"ширина поля вывода 3 символов"<<setw(3)<<i<<endl;
+	cout<<"ширина поля вывода 1 символов"<<setw(1)<<i<<endl;
+	cout<<"\nПрограмма работу закончила.\n"
+		"Завершение-любая клавиша.\n"<<endl;
+	system("pause");
+	return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+#include "stdafx.h" 
+#include <locale>
+#include <iostream>
+#include "Function.h"
+int _tmain(int argc, _TCHAR* argv[])
+{
+setlocale(LC_CTYPE, "Russian_Russia.1251");
+double x;
+double F1;
+double F2;
+std::cout << "Аргумент функции> "; std::cin >> x;
+F1 = Abramov::Function1 (x);
+F2 = Abramov::Function2 (x);
+Abramov::PrintData(F1, F2);
+std::cout << "Программа закончила работу." << std::endl;
+system("pause");
+return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include "stdafx.h" 
+#include <cmath>
+#include <iostream>
+#include <iomanip>
+#include "Function.h"
+using namespace Abramov;
+
+double Abramov:: Function1(double arg)
+{
+double F1;
+const double pi=acos(-1.0);
+return (sin(arg*arg+pi/3)*sin(arg*arg+pi/3))-sqrt(5/7*arg);
+}
+double Abramov:: Function2 (double x)
+{
+const double pi=acos(-1.0);
+return ((x*x)/5)+cos(x+pi/2)*cos(x+pi/2)*cos(x+pi/2)+99/11;
+}
+void Abramov::PrintData(double F1, double F2)
+{ 
+using namespace std;
+cout << "Результаты: " << endl;
+cout << setprecision(16);
+cout<<"знач 1 функции"<<F1<<endl;cout<<"знач 2 функции "<<F2<<endl;
+}	
+-------------------------------------------------------------------------------------------------------------------------------------------------
+#ifndef __Function_h__
+#define __Function_h__
+ namespace Abramov
+{	
+double Function1(double arg); 
+double Function2(double x);
+void PrintData(double Fl, double F2); 
+}
+#endif
+// stdafx.h: включаемый файл для стандартных системных включаемых файлов
+// или включаемых файлов для конкретного проекта, которые часто используются, но
+// не часто изменяются
+//
+-------------------------------------------------------------------------------------------------------------------------------------------------
+#pragma once
+
+#include "targetver.h"
+
+#include <stdio.h>
+#include <tchar.h>
+
+
+
+// TODO: Установите здесь ссылки на дополнительные заголовки, требующиеся для программы
+
+
+#include"stdafx.h"
+#include <locale>
+#include <iostream>
+#include <iomanip>
+using namespace std;
+double Function1(double arg);
+double Function2 (double x) ;
+void PrintData(double F1, double F2);
+//Главная программа
+int _tmain(int argc, _TCHAR* argv[]){
+setlocale(LC_CTYPE, "Russian_Russia.1251");
+double x;
+double F1;
+double F2;
+const double pi=acos(-1.0);
+cout << "\nАргумент функции> "; cin >> x;
+F1 = Function1(x);
+F2 = Function2 (x);
+PrintData (F1, F2);
+cout << std::endl << std::endl;
+cout << "Программа закончила работу. " << std::endl;
+system("pause");
+return 0;
+}
+double Function1(double arg){
+	double F;
+	const double pi=acos(-1.0);
+	F = sin(arg*arg+( pi/3))*sin(arg*arg+( pi/3))-sqrt((5/7)*arg);
+	return F;
+}
+double Function2(double x)
+{
+const double pi=acos(-1.0);
+return ((x*x)/5)+cos(x+pi/2)*cos(x+pi/2)*cos(x+pi/2)+99/11;
+}
+
+void PrintData(double Fn1, double Fn2)
+{
+cout<<"n\результаты:"<<endl;cout<<setprecision(16);
+cout<<"значение функции "<<Fn1<<endl;cout<<"знач 2 функции "<<Fn2<<endl;
+}
+
+// stdafx.cpp: исходный файл, содержащий только стандартные включаемые модули
+// 3.pch будет предкомпилированным заголовком
+// stdafx.obj будет содержать предварительно откомпилированные сведения о типе
+
+#include "stdafx.h"
+
+// TODO: Установите ссылки на любые требующиеся дополнительные заголовки в файле STDAFX.H
+// , а не в данном файле
+
+
+// laba3.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"
+#include <locale> 
+#include <cmath>
+#include <iostream> 
+#include <iomanip> 
+	int _tmain(int argc, _TCHAR* argv[])
+{
+using namespace std;
+setlocale(LC_CTYPE, "Russian_Russia.1251");
+double x;
+double F1;
+double F2;
+const double pi=acos(-1.0);
+cout << "\nАргумент функции> "; cin >> x;
+F1 = sin(x*x+( pi/3))*sin(x*x+( pi/3))-sqrt((5/7)*x);
+F2 = ((x*x)/5)+cos(x+pi/2)*cos(x+pi/2)*cos(x+pi/2)+99/11;
+cout << "AnРезультаты: " << endl;
+cout << setprecision(16); // устанавливаим точность вывода
+cout << "Значение первой функции: " << F1 << endl; cout << "Значение второй функции: " << F2 << endl;
+cout << endl << endl;
+cout << "Программа закончила работу. " << endl;
+system("pause");
+	}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+// normshtuka.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"
+#include <iostream> 
+#include <cmath> 
+#include <iomanip>
+
+using namespace std;
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	setlocale(LC_CTYPE,"Russian_Russia.1251");
+	  double a,b,c,d,x1,x2; 
+
+  cout << "Введите a\n"; 
+  cin >> a;
+  cout << "Введите b\n";
+  cin >> b;
+  cout << "Введите c\n";
+  cin >> c;
+
+  d = b * b - 4 * a * c; 
+  if (a==0){
+	cout<<setprecision(16)<<-c/b<<endl;
+	system("pause");
+	return 0;
+  }
+  if (d > 0) 
+  {
+    x1 = ((-b) + sqrt(d)) / (2 * a);
+    x2 = ((-b) - sqrt(d)) / (2 * a);
+    cout << "x1 = " << x1 << "\n";
+    cout << "x2 = " << x2 << "\n";
+  }
+  if (d == 0) 
+  {
+    x1 = -(b / (2 * a));
+    cout << "x1 = x2 = " << x1 << "\n";
+  }
+  if (d < 0) 
+    cout <<"pervii  "<<setprecision(16)<<(-b)/(2*a)<<"+"<<(sqrt(fabs(d)))/(2*a)<<"i"<<endl;
+	cout <<"vtoroy  "<<setprecision(16)<<(-b)/(2*a)<<"-"<<(sqrt(fabs(d)))/(2*a)<<"i"<<endl;
+	system("pause");
+	return 0;
+}
+
+
+
+// laba5.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <complex>
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+complex<double>z1(1.0,2.0);
+double a, b, c;
+double eps = 1.0e-6;
+double D;	
+cout<<"a,b,c"<<endl;
+cin>>a>>b>>c;
+if((fabs(a) <eps && fabs(b) <eps && fabs(c) <eps) || (fabs(a)<eps && fabs(b)<eps && fabs(c)>eps)){
+	cout<<"Error"<<endl;
+	system("pause");}
+if((fabs(a) <eps && fabs(b) <eps && fabs(c) <eps) || (fabs(a)<eps && fabs(b)<eps && fabs(c)<eps)){
+	cout<<"unlimited solves"<<endl;
+	system("pause");
+}
+if(fabs(a) <eps && fabs(b)>eps){
+	double k=-c/b;
+	cout<<setprecision(16)<<k<<endl;
+	system("pause");
+	return 0;
+}
+D=b*b-4*a*c;
+if(fabs (D) <eps){
+	double k=-b/2*a;
+	cout<<setprecision(16)<<k<<endl;
+	system("pause");	
+	return 0;
+}
+else if(D>eps)
+{
+	double x1=(-b+sqrt(D))/2*a;
+	double x2=(-b-sqrt(D))/2*a;
+	cout<<setprecision(16)<<"pervii koren'"<<endl<<x1<<endl<<"vtoroy koren'"<<endl<<x2<<endl;
+	system("pause");
+	return 0;
+}
+else{//если д меньше 0
+	cout <<"pervii  "<<setprecision(16)<<(-b)/(2*a)<<"+"<<(sqrt(fabs(D)))/(2*a)<<"i"<<endl;
+	cout <<"vtoroy  "<<setprecision(16)<<(-b)/(2*a)<<"-"<<(sqrt(fabs(D)))/(2*a)<<"i"<<endl;
+	system("pause");
+	return 0;
+}
+system("pause");
+	}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+// lab7.cpp: определяет точку входа для консольного приложения.???????????????????????????????????
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int a[10]={1,4,5,-3,15,23,42,8,9,9};
+	cout<<a[10]<<endl;
+	system("pause");
+	return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+// dop.cpp: определяет точку входа для консольного приложения.
+//12.60
+
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[])
+{
+
+    int i, j;
+	int k=0;
+	int z=0;
+	double y[5][8]={{1,2,3,4,5,6,7,8},{1,2,3,4,5,6,7,8},{1,2,3,4,5,6,7,8},{1,2,3,4,5,6,7,8},{1,2,3,4,5,6,7,8}};
+    double sr_ar = 0;
+	j=0;
+	for (int j=0; j<5;j++){
+	sr_ar+=y[j][z];
+	k+=1;
+	cout<<sr_ar/k<<endl;
+	while (z!=8){
+	z++;
+	k=0;
+		}
+	}
+	
+    system("pause");
+}
+
+
+
+
+
+// 3.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+
+void function(int** arr_1, int n_1, int m_1, int** arr_2, int n_2, int m_2, char operation){
+	setlocale(LC_CTYPE, "Russian_Russia.1251");
+	switch (operation)
+{
+case '+':
+if (n_1==n_2&&m_1==m_2){
+for(int i=0; i<n_1; i++){
+for(int j=0; j<m_1; j++){
+arr_1[i][j]+=arr_2[i][j];
+cout<<arr_1[i][j]<<" ";
+
+} cout<<endl;
+}
+} else {cout<<"Данные некоректны"<<endl;}
+break;
+case '-':
+if (n_1==n_2&&m_1==m_2){
+for(int i=0; i<n_1; i++){
+for(int j=0; j<m_1; j++){
+arr_1[i][j]-=arr_2[i][j];
+cout<<arr_1[i][j]<<" ";
+} cout<<endl;
+}
+} else {cout<<"Данные некоректны"<<endl;}
+break;
+case '*':
+if (operation=='*'&&m_1==n_2){
+int num=m_1;
+int** new_arr;
+new_arr = new int *[n_1];
+for (int i=0; i<n_1; i++){
+new_arr[i] = new int[m_2];
+for(int j=0; j<m_2; j++){
+new_arr[i][j] = 0;
+for(int k=0; k<num; k++){
+new_arr[i][j]+=arr_1[i][k]*arr_2[k][j];
+}
+}
+}
+for(int i=0; i<n_1; i++){
+for(int j=0; j<m_2; j++){
+cout<<new_arr[i][j]<<" ";
+} cout<<endl;
+}
+} else {cout<<"Данные некоректны"<<endl;}
+break;
+}
+}
+int _tmain(int argc, _TCHAR* argv[])
+{
+setlocale(LC_CTYPE, "Russian_Russia.1251");
+
+int n_1;
+cin >> n_1;
+int m_1;
+cin >> m_1;
+int** a_1 = new int*[n_1];
+for (int i = 0; i < n_1; i++) {
+a_1[i] = new int[m_1];
+}
+
+for (int i = 0; i < n_1; i++) {
+for (int j = 0; j < m_1; j++) {
+cin>> a_1[i][j];
+}
+}
+
+int n_2;
+cin >> n_2;
+int m_2;
+cin >> m_2;
+int** a_2 = new int*[n_2];
+for (int i = 0; i < n_2; i++) {
+a_2[i] = new int[m_2];
+}
+for (int i = 0; i < n_2; i++) {
+for (int j = 0; j < m_2; j++) {
+cin >> a_2[i][j];
+}
+}
+
+char operation='*';
+
+function(a_1, n_1, m_1, a_2, n_2, m_2, operation);
+
+system("pause");
+}
+
+
+
+
+
+
+// 2.cpp: определяет точку входа для консольного приложения.
+//
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[])
+{
+setlocale(LC_CTYPE, "Russian_Russia.1251");
+int arr[] = { 1, 2, 3, 2, 2, 4, 5, 5 };
+
+int count=0;
+
+for(int i: arr){ count++; }
+
+for(int i=0; i<count-1; i++){
+for(int j=i+1; j<count; j++){
+if(arr[i]==arr[j]) arr[j]=-1; 
+}
+}
+
+int count_1=0;
+for(int i=0; i<count; i++){
+if(arr[i] != -1) count_1++; 
+}
+int *arr_1;
+arr_1 = new int [count_1];
+int k = -1;
+for(int i=0; i<count; i++){
+if(arr[i] != -1) { 
+k++;
+arr_1[k] = arr[i];
+}
+}
+for(int i=0; i<=k; i++) cout<<arr_1[i]<<" ";
+system("pause");
+}
+
+
+
+
+
+// lab8.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[])
+{
+setlocale(LC_CTYPE, "Russian_Russia.1251");
+int arr[] = { 1, 2, 3, 2, 2, 4, 5, 5 };
+
+int count=0;
+
+for(int i: arr){ count++; }
+
+for(int i=0; i<count-1; i++){
+for(int j=i+1; j<count; j++){
+if(arr[i]==arr[j]) arr[j]=-1; 
+}
+}
+
+int count_1=0;
+for(int i=0; i<count; i++){
+if(arr[i] != -1) count_1++; 
+}
+int *arr_1;
+arr_1 = new int [count_1];
+int k = -1;
+for(int i=0; i<count; i++){
+if(arr[i] != -1) { 
+k++;
+arr_1[k] = arr[i];
+}
+}
+for(int i=0; i<=k; i++) cout<<arr_1[i]<<" ";
+system("pause");
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+// da.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"
+#include <locale.h>
+#include <iostream>
+#include <time.h>
+#include <cmath>
+#include "LABA9.h"
+using namespace std;
+const int MAX_SEQUENCE=1000;
+void da::Function1(double x)
+{
+	setlocale(LC_CTYPE,"Russian_Russia.1251");
+	double eps;
+	double func;
+	int n;
+	double d;
+	double dn;
+	bool flag;
+	if (x<0){
+		cout<<"введите знач eps:"<<endl;
+		cin>>eps;
+		n=0;
+		d=1.0;
+		func=d;
+		dn=pow(x,2)/pow((1+pow(x,2)),n);
+		flag=false;
+		for(n=2;n<MAX_SEQUENCE;n++)
+		{
+			d*=dn;
+			func+=d;
+			if(abs(d/func)<eps)
+			{
+				flag=true;
+				break;
+			}
+		}
+		cout<<"точность>"<<" " <<eps<<endl;
+		cout<<"x>"<<" " <<x<<endl;
+		cout<< "сумма:"<<" "<<func<<endl;
+		cout<<"Кол-во членов ряда:"<<" " <<n<<endl;
+	}else{
+		cout<<"х не в промежутке -беск; 0)"<<endl;
+	}
+}
+
+
+
+
+namespace da
+{
+	void Function1(double x);
+}
+
+
+
+
+// lab9.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"	
+#include <iostream>
+#include "LABA9.h"
+using namespace std;
+using namespace da;
+int _tmain(int argc, _TCHAR* argv[]){
+	setlocale(LC_CTYPE, "Russian_Russia.1251");
+double x;
+double eps;
+double F1;
+cout << "Вариант 1 " << endl;
+cout << "Введите значение x:" << endl;
+cin >> x;
+Function1(x);
+cout << "Программа закончила свою работу!" << endl; 
+system("pause");
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
