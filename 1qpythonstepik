@@ -225,7 +225,7 @@ class LoggableList(list, Loggable):
 ------------------------------------------------------------------------------------------------------------------------------------------------
         
         
-        try:
+ try:
     foo()
 except ZeroDivisionError as e:
     print("ZeroDivisionError")
