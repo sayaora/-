@@ -1,0 +1,14 @@
+// zadacha11.cpp: определяет точку входа для консольного приложения.
+//
+// вычислить силу F , действующую на тело по известной массе тела m и известному ускорению, с которым это тело движется
+#include "stdafx.h"
+#include<iostream>
+#include<locale.h>
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	setlocale(LC_CTYPE,"RUSSIAN_RUSSIA.1251");
+	system("pause")
+}
+
